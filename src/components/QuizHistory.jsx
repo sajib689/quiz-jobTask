@@ -14,9 +14,9 @@ const QuizHistory = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-gray-800 text-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold">Quiz History</h2>
-      <ul>
+    <div className="p-4 bg-gray-800 text-white rounded-lg shadow-lg h-96">
+      <h2 className="text-2xl font-bold mb-4">Quiz History</h2>
+      <ul className="overflow-y-auto max-h-full">
         {history.map((attempt, index) => (
           <li key={index} className="my-2 p-2 bg-gray-700 rounded">
             <span>{new Date(attempt.date).toLocaleString()} - Score: {attempt.score}/{attempt.totalQuestions}</span>

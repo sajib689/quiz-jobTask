@@ -107,11 +107,16 @@ const [feedback, setFeedback] = useState(null);
         totalQuestions: quizQuestions.length,
         date: new Date().toISOString(),
       });
+      
+      // Reset to show the first question
+      setCurrentQuestion(0);
+      setScore(0);  // Optionally reset the score as well
     }
   };
+  
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center">
+    <div className="w-[100%] mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center">
       <h2 className="text-2xl font-bold mb-4">Quiz Time!</h2>
       <p className="text-lg font-semibold">
         {quizQuestions[currentQuestion].question}
