@@ -123,7 +123,7 @@ const Quiz = () => {
     <div className="w-[100%] mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center">
       <h2 className="text-2xl font-bold mb-4">Quiz Time!</h2>
 
-      {/* Display Question Number and Question */}
+    
       <p className="text-lg font-semibold">
          ({currentQuestion + 1}) {quizQuestions[currentQuestion].question}
       </p>
