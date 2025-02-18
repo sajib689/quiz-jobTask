@@ -106,19 +106,20 @@ const Quiz = () => {
       setTimer(30);
     } else {
       toast.success(`Quiz Completed! Your Score: ${score}/${quizQuestions.length}`);
-
+  
       await saveAttempt({
         score,
         totalQuestions: quizQuestions.length,
         date: new Date().toISOString(),
       });
+  
 
-      // Reset quiz
-      setCurrentQuestion(0);
-      setScore(0);
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }
   };
-
+  
   return (
     <div className="w-[100%] mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center">
       <h2 className="text-2xl font-bold mb-4">Quiz Time!</h2>
