@@ -86,7 +86,7 @@ const Quiz = () => {
 
   const handleAnswer = (option) => {
     if (selectedAnswer) return; 
-    
+
     setSelectedAnswer(option);
     if (option === quizQuestions[currentQuestion].answer) {
       setFeedback("correct");
@@ -122,7 +122,12 @@ const Quiz = () => {
   return (
     <div className="w-[100%] mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center">
       <h2 className="text-2xl font-bold mb-4">Quiz Time!</h2>
-      <p className="text-lg font-semibold">{quizQuestions[currentQuestion].question}</p>
+
+      {/* Display Question Number and Question */}
+      <p className="text-lg font-semibold">
+         ({currentQuestion + 1}) {quizQuestions[currentQuestion].question}
+      </p>
+
       <div className="mt-4">
         {quizQuestions[currentQuestion].options.map((option, index) => (
           <button
@@ -141,6 +146,7 @@ const Quiz = () => {
           </button>
         ))}
       </div>
+      
       <p className="mt-2">Time Left: {timer}s</p>
       {feedback && (
         <div className="mt-4 text-lg flex justify-center items-center">
