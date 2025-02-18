@@ -1,4 +1,4 @@
-// Leaderboard.js
+'use client'
 import { useEffect, useState } from 'react';
 import { getAttempts } from '../utils/indexedDB';
 
@@ -9,8 +9,8 @@ const Leaderboard = () => {
     const fetchLeaderboard = async () => {
       const attempts = await getAttempts();
       const sortedLeaderboard = attempts
-        .sort((a, b) => b.score - a.score)  // Sort by score in descending order
-        .slice(0, 10);  // Display top 10 scores (optional)
+        .sort((a, b) => b.score - a.score) 
+        .slice(0, 10);  
       setLeaderboard(sortedLeaderboard);
     };
     fetchLeaderboard();
