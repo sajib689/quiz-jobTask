@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import { saveAttempt } from "../utils/indexedDB";
-
+import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
+import "react-toastify/dist/ReactToastify.css";
 const quizQuestions = [
     {
       id: 1,
@@ -101,16 +102,16 @@ const [feedback, setFeedback] = useState(null);
       setFeedback(null);
       setTimer(30);
     } else {
-      alert(`Quiz Completed! Your Score: ${score}/${quizQuestions.length}`);
+      toast.success(`Quiz Completed! Your Score: ${score}/${quizQuestions.length}`);
+
       await saveAttempt({
         score,
         totalQuestions: quizQuestions.length,
         date: new Date().toISOString(),
       });
       
-      // Reset to show the first question
       setCurrentQuestion(0);
-      setScore(0);  // Optionally reset the score as well
+      setScore(0);  
     }
   };
   
@@ -151,6 +152,7 @@ const [feedback, setFeedback] = useState(null);
           </span>
         </div>
       )}
+      <ToastContainer/>
     </div>
   );
 };

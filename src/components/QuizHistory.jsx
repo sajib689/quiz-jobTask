@@ -14,7 +14,7 @@ const QuizHistory = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-gray-800 text-white rounded-lg shadow-lg h-96">
+    <div className="p-4 bg-gray-800 text-white rounded-lg shadow-lg h-[95vh]">
       <h2 className="text-2xl font-bold mb-4">Quiz History</h2>
       <ul className="overflow-y-auto max-h-full">
         {history.map((attempt, index) => (
