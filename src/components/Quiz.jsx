@@ -85,7 +85,7 @@ const Quiz = () => {
   }, [timer]);
 
   const handleAnswer = (option) => {
-    if (selectedAnswer) return; // Prevent selecting after already selecting an answer
+    if (selectedAnswer) return; 
     
     setSelectedAnswer(option);
     if (option === quizQuestions[currentQuestion].answer) {
@@ -135,7 +135,7 @@ const Quiz = () => {
                 : "bg-blue-500 hover:bg-blue-600"
             }`}
             onClick={() => handleAnswer(option)}
-            disabled={selectedAnswer} // Disable after selection
+            disabled={selectedAnswer} 
           >
             {option}
           </button>
