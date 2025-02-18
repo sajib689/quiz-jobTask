@@ -68,9 +68,9 @@ const quizQuestions = [
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] =
-    (useState < string) | (null > null);
-  const [feedback, setFeedback] = (useState < string) | (null > null);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+const [feedback, setFeedback] = useState(null);
+
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(30);
 
